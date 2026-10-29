@@ -308,7 +308,7 @@ This lab is for education and authorized testing only. Test systems you own or h
 - **VMware Workstation / Fusion:** [https://www.vmware.com/products/desktop-hypervisor/workstation-and-fusion](https://www.vmware.com/products/desktop-hypervisor/workstation-and-fusion)
 - **Broadcom Support Portal:** [https://support.broadcom.com/](https://support.broadcom.com/)
 - **Nmap Reference Guide:** [https://nmap.org/book/man.html](https://nmap.org/book/man.html)
-- **Report Drive Link:** [https://nmap.org/book/man.html]()
+- **Report Drive Link:**(https://drive.google.com/file/d/17XMWaiInhTmGejAVmli2YRYnNBYmUJcc/view)
 ---
 
 ## 👤 Author
