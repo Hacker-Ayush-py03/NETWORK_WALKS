@@ -312,7 +312,7 @@ Replace the example fields below with your own details before publishing:
 - **Program Name:** Cybersecurity at Networkwalks *(edit as applicable)*
 - **Week:** 01
 - **Project:** Cybersecurity & Pentesting Lab Setup
-- **Repository:** Add your GitHub repository URL after publishing
+- **Repository:** https://github.com/Hacker-Ayush-py03/Network_Walks/blob/main/README.md
 
 ---
 
