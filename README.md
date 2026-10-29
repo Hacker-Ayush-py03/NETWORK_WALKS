@@ -5,315 +5,340 @@
 <p><strong>Building an isolated virtual lab for penetration testing and ethical hacking practice</strong></p>
 
 <p>
-  <a href="https://github.com"><img src="https://img.shields.io/badge/Skill-Cybersecurity-333333?style=flat&labelColor=cc0000" alt="Skill: Cybersecurity"></a>
-  <img src="https://img.shields.io/badge/Ver-VirtualBox_v7.2-007ec6?style=flat&labelColor=333333" alt="VirtualBox v7.2">
-  <img src="https://img.shields.io/badge/Kali_Linux-v2026.2-ff8c00?style=flat&logo=kalilinux&logoColor=white&labelColor=111111" alt="Kali Linux v2026.2">
-  <img src="https://img.shields.io/badge/Skill-Linux-333333?style=flat&labelColor=cc0000" alt="Skill: Linux">
-  <img src="https://img.shields.io/badge/Network-10.0.0.0%2F24-168f86?style=flat&labelColor=111111" alt="Network 10.0.0.0/24">
-  <img src="https://img.shields.io/badge/Penetration-Testing-cc0000?style=flat&labelColor=111111" alt="Penetration Testing">
+  <img src="https://img.shields.io/badge/Skill-Cybersecurity-404040?style=flat-square&labelColor=C00000" alt="Skill: Cybersecurity" />
+  <img src="https://img.shields.io/badge/Hypervisor-VMware_Workstation_25H2-0070C0?style=flat-square&labelColor=000000&logo=vmware&logoColor=white" alt="VMware Workstation 25H2" />
+  <img src="https://img.shields.io/badge/Guest-Kali_Linux-E87500?style=flat-square&labelColor=000000&logo=kalilinux&logoColor=white" alt="Guest: Kali Linux" />
+  <img src="https://img.shields.io/badge/Host-Windows_11-0078D4?style=flat-square&logo=windows11&logoColor=white" alt="Host: Windows 11" />
+  <img src="https://img.shields.io/badge/Network-NAT-238F89?style=flat-square&labelColor=000000" alt="Network: NAT" />
 </p>
 
 <p>
-  <img src="https://img.shields.io/badge/Skill-Virtualization-333333?style=flat&labelColor=cc0000" alt="Skill: Virtualization">
-  <a href="https://github.com"><img src="https://img.shields.io/badge/GitHub-Repository-1769aa?style=flat&logo=github&logoColor=white&labelColor=111111" alt="GitHub Repository"></a>
-  <img src="https://img.shields.io/badge/Kali_Linux-Lab-333333?style=flat&logo=kalilinux&logoColor=white&labelColor=cc0000" alt="Kali Linux Lab">
-  <img src="https://img.shields.io/badge/NetworkWalks-Cybersecurity-333333?style=flat&labelColor=111111" alt="NetworkWalks Cybersecurity">
-  <img src="https://img.shields.io/badge/Ethical-Hacking-ff8c00?style=flat&labelColor=111111" alt="Ethical Hacking">
-  <img src="https://img.shields.io/badge/Author-Your_Name-cc0000?style=flat" alt="Author: Your Name">
+  <img src="https://img.shields.io/badge/Processor-AMD_Ryzen_5-404040?style=flat-square&labelColor=C00000" alt="Host processor: AMD Ryzen 5" />
+  <img src="https://img.shields.io/badge/VM_Memory-8_GB-404040?style=flat-square&labelColor=C00000" alt="VM memory: 8 GB" />
+  <img src="https://img.shields.io/badge/VM_Processors-3-404040?style=flat-square&labelColor=C00000" alt="VM processor setting: 3" />
+  <img src="https://img.shields.io/badge/Virtual_Disk-100_GB-404040?style=flat-square&labelColor=C00000" alt="Virtual disk: 100 GB" />
+</p>
+
+<p>
+  <img src="https://img.shields.io/badge/Skill-Linux-404040?style=flat-square&labelColor=C00000" alt="Skill: Linux" />
+  <img src="https://img.shields.io/badge/Skill-Virtualization-404040?style=flat-square&labelColor=C00000" alt="Skill: Virtualization" />
+  <img src="https://img.shields.io/badge/Focus-Penetration_Testing-C00000?style=flat-square&labelColor=000000&logo=kalilinux&logoColor=white" alt="Focus: Penetration testing" />
+  <img src="https://img.shields.io/badge/Focus-Ethical_Hacking-E87500?style=flat-square&labelColor=000000" alt="Focus: Ethical hacking" />
 </p>
 
 </div>
-
-> ⚠️ **Authorized use only:** This laboratory is intended for education and authorized security testing. Test only systems you own or have explicit permission to assess. Keep deliberately vulnerable targets isolated from production and public networks.
 
 ---
 
 ## 📌 Project Overview
 
-This project documents the setup of a virtual cybersecurity and penetration-testing laboratory using Oracle VirtualBox and Kali Linux.
+This project documents the setup of a **Kali Linux cybersecurity and penetration-testing laboratory** running on **Windows 11** using **VMware Workstation 25H2**. The VMware hardware values in this README are based on the VM Settings screenshot included in this repository.
 
-The purpose of the lab is to create a controlled environment where cybersecurity tools, network scanning, reconnaissance, vulnerability assessment, packet analysis, and other security-testing activities can be performed safely and repeatedly.
+The lab is intended for practicing Linux administration, networking, reconnaissance, packet analysis, vulnerability assessment, and security tools in a controlled environment. The current virtual network adapter is configured as **NAT**. The Kali guest's actual IP address, subnet, gateway, and DNS must be recorded from the running VM; these values are not visible in the supplied settings screenshot.
 
-The lab uses a private VirtualBox NAT Network so additional virtual machines can be connected later and used as targets for authorized security testing.
+> ⚠️ **Authorized use only:** Use this lab only for systems you own or have explicit permission to test. VMware NAT provides network address translation, but it should not be treated as a guarantee of complete isolation.
+
+---
 
 ## 🎯 Objectives
 
 The main objectives of this project are to:
 
-- Install and configure VirtualBox.
-- Install or import Kali Linux as a virtual machine.
-- Create a private NAT Network for the cybersecurity lab.
-- Configure network connectivity for Kali Linux.
-- Assign a consistent IP address to the Kali VM, if required.
-- Verify network connectivity and DNS resolution.
-- Create a clean VM snapshot for recovery.
-- Document the setup process and verification results.
-- Prepare the environment for future cybersecurity projects.
+- Document the Windows 11 host and VMware Workstation 25H2 environment.
+- Configure and review a Kali Linux virtual machine.
+- Record the VM's assigned memory, processor setting, virtual disk, CD/DVD device, and network adapter.
+- Connect the Kali VM through VMware's NAT networking.
+- Check the guest's IPv4 address, subnet, default route, and DNS configuration.
+- Verify basic connectivity and DNS resolution.
+- Create a clean VM snapshot as a recovery point.
+- Record screenshots, commands, problems, and solutions.
+- Prepare the environment for future authorized cybersecurity exercises.
+
+---
 
 ## 🛡️ Purpose of the Lab
 
-The lab provides an isolated and controlled environment for cybersecurity learning and authorized security testing. It can be used for activities such as:
+This lab provides an environment for cybersecurity learning and authorized security testing, including:
 
-- Network reconnaissance
-- Port scanning
+- Network reconnaissance on authorized lab systems
+- Port scanning of owned or intentionally vulnerable virtual machines
 - Vulnerability assessment
 - Packet analysis
-- Web security testing
-- Exploitation practice against intentionally vulnerable lab targets
-- Security-tool experimentation
+- Web security testing against local test applications
+- Exploitation practice in a deliberately vulnerable lab
+- Linux administration and security-tool experimentation
 
-**Important:** Do not use this lab or its tools to attack unauthorized systems. Keep vulnerable target machines on the dedicated lab network and do not use bridged networking for them.
+**Important:** Do not scan or attack public systems or other networks without explicit authorization. Use a host-only or appropriately configured custom network when a lab requires stronger separation from the host's normal network.
+
+---
 
 ## 🏗️ Lab Architecture
-<img width="1100" height="503" alt="Screenshot 2026-10-29 233132" src="https://github.com/user-attachments/assets/3f336e66-92f0-4aed-bcf6-a3b13a767aa9" />
 
 ```mermaid
 flowchart TB
-    HOST[Host Computer\nWindows 10]
-    VBOX[Oracle VirtualBox 7.2]
-    NAT[NAT Network: NatNetwork\n10.0.0.0/24]
-    KALI[Kali Linux VM\n10.0.0.2/24]
-    TARGET[Future Authorized Target VMs\n10.0.0.3–10.0.0.99]
+    HOST[Host Computer<br/>Windows 11<br/>AMD Ryzen 5]
+    VMWARE[VMware Workstation 25H2]
+    NAT[VMware Network Adapter<br/>NAT]
+    KALI[Kali Linux VM<br/>8 GB RAM · 3 processors · 100 GB SCSI disk]
+    TARGET[Future authorized target VMs<br/>only after network configuration]
 
-    HOST --> VBOX
-    VBOX --> NAT
+    HOST --> VMWARE
+    VMWARE --> NAT
     NAT --> KALI
-    NAT --> TARGET
+    NAT -. Optional future VMs .-> TARGET
 ```
 
-Additional target machines can be added to the same virtual network in future projects. Confirm your own subnet, DHCP range, gateway, and interface configuration in VirtualBox before relying on the example values in this README.
+The diagram represents the intended lab structure. The exact guest IP range and gateway have not been inferred from the screenshot; verify them in Kali and VMware before documenting them.
+
+---
 
 ## ⚙️ Lab Configuration
 
-The following table records the configuration described for this lab. Hardware and network values can differ on other systems.
+The following details are from the user's provided host information and VMware Workstation VM Settings screenshot.
 
 | 🧩 Component | ⚙️ Configuration |
 |---|---|
-| 🖥️ Host OS | Windows 10 |
-| 🧠 Host RAM | 8 GB |
-| ⚡ Processor | Intel Core i7 |
-| 🧰 Hypervisor | VirtualBox 7.2 |
-| 🐉 Security OS | Kali Linux 2026.2 *(verify the version actually installed)* |
-| 🧠 Kali RAM | 2048 MB |
-| 🌐 Virtual Network | NAT Network (`NatNetwork`) |
-| 📡 Network Address | `10.0.0.0/24` |
-| 🐧 Kali IP Address | `10.0.0.2/24` *(example; verify locally)* |
-| 🚪 Default Gateway | `10.0.0.1` *(verify in VirtualBox/network routes)* |
-| 🌍 DNS Server | `8.8.8.8` *(example)* |
-| 🔮 Future VM Range | `10.0.0.3–10.0.0.99` *(reserve addresses to avoid conflicts)* |
+| 🖥️ Host OS | **Windows 11** |
+| ⚙️ Host Processor | **AMD Ryzen 5** *(exact Ryzen 5 model not provided)* |
+| 🧰 Hypervisor | **VMware Workstation 25H2** |
+| 🐉 Guest OS | Kali Linux *(exact installed release should be confirmed inside the VM)* |
+| 🧠 VM Memory | **8 GB (8192 MB)** |
+| ⚡ VM Processors | **3** *(as shown in VMware settings)* |
+| 💾 Virtual Hard Disk | **100 GB, SCSI** |
+| 💿 CD/DVD Device | **SATA**, attached to a Kali Linux ISO file |
+| 📂 ISO File Path | Visible beginning: `D:\kali-linux-2025...` *(truncated in screenshot; confirm the full name in VMware settings)* |
+| 🌐 Network Adapter | **NAT** |
+| 🔌 USB Controller | Present |
+| 🔊 Sound Card | Auto detect |
+| 🖥️ Display | Auto detect |
+| 🧠 Physical Host RAM | do not confuse this with the VM's allocated 8 GB |
+| 📡 Kali IP Address |  obtain from `ip -br address` |
+| 🚪 Default Gateway |  obtain from `ip route` |
+| 🌍 DNS Server | check NetworkManager/resolver settings |
+| 🔮 Future Target VMs | Add only after confirming the intended virtual network and isolation requirements |
 
-> **Networking note:** A static address should be outside the DHCP pool or reserved for the VM, otherwise an address conflict may occur. The gateway and DNS settings above are examples; verify them against your actual NAT Network configuration.
+### 📸 VMware Workstation VM Settings
+
+The screenshot below records the VM settings used for the configuration table.
+<img width="1914" height="922" alt="Screenshot 2026-10-30 001953" src="https://github.com/user-attachments/assets/86545b65-4fa4-43b9-8fc6-fa40f1c9df56" />
+
+<img width="1920" height="1080" alt="Screenshot (1815)" src="https://github.com/user-attachments/assets/5d702d8a-3dc0-4b19-bfcc-f454127af8fb" />
+
+---
 
 ## 🪜 Lab Setup Procedure
 
-### Step 1. Install 7-Zip
+### Step 1. Confirm the Host Environment
 
-7-Zip can be used to extract a Kali Linux virtual-machine package distributed as a `.7z` archive.
+The host details for this lab are:
 
-- Tool: [7-Zip Downloads](https://www.7-zip.org/download.html)
-- Install 7-Zip and extract the downloaded archive to a folder with sufficient disk space.
+- Operating system: Windows 11
+- Processor: AMD Ryzen 5
+- Hypervisor: VMware Workstation 25H2
 
-### Step 2. Install VirtualBox
+The exact Ryzen 5 model and total physical host RAM were not supplied, so they are not listed as specific model/capacity values here.
 
-Install Oracle VirtualBox on the host computer.
+### Step 2. Download Kali Linux
 
-- Tool: [VirtualBox Downloads](https://www.virtualbox.org/wiki/Downloads)
-- Follow the installer instructions and ensure hardware virtualization is enabled in BIOS/UEFI if required.
+Download Kali Linux installation media or a VMware-ready virtual machine from the official Kali Linux website:
 
-### Step 3. Create the NAT Network
-<img width="1920" height="1080" alt="Screenshot (1813)" src="https://github.com/user-attachments/assets/d8f4f387-98bd-467f-be12-3166e307f832" />
-
-In VirtualBox, open the network settings (the menu location can vary by VirtualBox version) and create a dedicated NAT Network.
-
-| Setting | Example value |
-|---|---|
-| Network Name | `NatNetwork` |
-| IPv4 Prefix | `10.0.0.0/24` |
-| DHCP | Enabled, unless you deliberately manage addressing another way |
-| IPv6 | Disabled for this example |
-
-A NAT Network allows multiple VMs connected to that network to communicate with each other while using network address translation for outbound connectivity. Confirm the gateway and DHCP pool shown in your VirtualBox configuration.
-
-### Step 4. Import Kali Linux
-
-Download a VirtualBox-ready Kali image from the official Kali Linux website and import/open it in VirtualBox.
-
-- Tool: [Kali Linux — Get Kali](https://www.kali.org/get-kali/)
-<img width="1920" height="1080" alt="Screenshot (1814)" src="https://github.com/user-attachments/assets/850d2772-9265-4633-918f-0294b77eac77" />
+**Official resource:** [Kali Linux — Get Kali](https://www.kali.org/get-kali/)
+<img width="1916" height="915" alt="Screenshot 2026-10-30 000907" src="https://github.com/user-attachments/assets/e28fbb30-6636-430e-90de-f6887f5e1864" />
 
 
-Configure the VM network adapter as follows:
-
-| Setting | Example value |
-|---|---|
-| Adapter | Adapter 1 |
-| Attached to | NAT Network |
-| Network | `NatNetwork` |
-| Adapter Type | Intel PRO/1000 MT Desktop |
-| Memory | `2048 MB` |
-
-A shared folder may also be configured for transferring required files between the host operating system and Kali VM. Share only the folders needed for the lab and avoid exposing sensitive host files.
-
-### Step 5. Configure the Kali Linux Network
-
-Check the current interface, address, route, and NetworkManager connection before modifying network settings:
-
-<img width="1920" height="1080" alt="Screenshot (1806)" src="https://github.com/user-attachments/assets/61eec4bd-421e-4575-8b71-8adc26cb0241" />
+Once Kali boots, check the actual installed release with:
 
 ```bash
-ip address
+cat /etc/os-release
+```
+
+### Step 3. Review the VMware Virtual Hardware
+
+Open VMware Workstation, select the Kali VM, and choose **Edit virtual machine settings**. Confirm the values shown in the following table.
+
+| VMware Device | Setting to Confirm |
+|---|---|
+| Memory | `8192 MB` |
+| Processors | `3` |
+| Hard Disk (SCSI) | `100 GB` |
+| CD/DVD (SATA) | Using the intended Kali Linux ISO file |
+| Network Adapter | `NAT` |
+| USB Controller | Present |
+| Sound Card | Auto detect |
+| Display | Auto detect |
+
+Shut down the guest before changing hardware settings unless VMware explicitly supports changing that setting while the VM is running. The 8 GB figure is the memory allocated to the **virtual machine**, not the total RAM installed in the Windows host.
+
+### Step 4. Configure the VMware Network Adapter
+
+1. Open **VM Settings → Network Adapter**.
+2. Confirm that **NAT** is selected.
+3. Enable **Connected** and **Connect at power on** if those options are available.
+4. Start Kali Linux and log in.
+5. Check the guest's actual network configuration before making any static-IP changes.
+
+<img width="1920" height="1080" alt="Screenshot (1813)" src="https://github.com/user-attachments/assets/8a623a44-ec8e-47bc-bf90-f3a99894d8ea" />
+
+Run these commands inside Kali:
+
+```bash
+ip -br address
 ip route
-nmcli connection show
 nmcli device status
+nmcli device show
 ```
+<img width="885" height="160" alt="Screenshot 2026-10-26 222800" src="https://github.com/user-attachments/assets/88dd25ab-e9c2-4b84-b392-a1041ebf2d37" />
+<img width="967" height="137" alt="Screenshot 2026-10-26 222753" src="https://github.com/user-attachments/assets/0d9ff256-9f0b-4a1a-ad2b-28d36037701f" />
 
-Example intended settings for this lab:
 
-```text
-IP Address:    10.0.0.2/24
-Subnet Mask:   255.255.255.0
-Gateway:       10.0.0.1
-DNS:           8.8.8.8
-```
+Do not assume that the guest uses `10.0.0.2`, the gateway is `10.0.0.1`, or DNS is `8.8.8.8`. Those were values from a different example and are **not confirmed** by the VMware screenshot. Start with DHCP unless your lab requires a fixed address and you have confirmed the VMware NAT subnet, gateway, DNS, and DHCP address pool.
 
-Use the actual connection name shown by `nmcli connection show`. You can generally keep DHCP enabled for a simple lab; for a consistent IP address, configure a DHCP reservation or a static address that does not conflict with the DHCP pool. After applying settings, reconnect and verify with `ip address` and `ip route`.
+<img width="1920" height="1080" alt="Screenshot (1806)" src="https://github.com/user-attachments/assets/631b3174-27c2-4e0c-9196-fce943a9bbf7" />
+
+<img width="1920" height="1080" alt="Screenshot (1804)" src="https://github.com/user-attachments/assets/0b8a45a9-22ad-476a-bb48-18b62187d3af" />
+
+### Step 5. Verify Connectivity and DNS
+
+Use the commands in the **Lab Verification** table below. If an IP test works but a hostname does not resolve, investigate DNS separately. A failed ping by itself does not prove that networking is broken because ICMP may be filtered.
+
+<img width="363" height="232" alt="Screenshot 2026-10-28 223018" src="https://github.com/user-attachments/assets/d01a969a-6e21-4d76-b652-b626f0a22ed1" />
+
 
 ### Step 6. Create a Clean VM Snapshot
 
-After confirming that Kali boots and network settings are correct, shut down or snapshot the VM from VirtualBox's **Snapshots** view.
+After Kali boots reliably and the initial network configuration is documented, create a baseline snapshot in VMware Workstation using the Snapshot menu or Snapshot Manager.
 
 Suggested snapshot name:
 
 ```text
-Clean Kali - Network Setup
+Clean Kali - Initial Setup
 ```
 
-This snapshot is the clean baseline for the lab. Restore it if later experiments change or damage the VM configuration. A snapshot is not a substitute for a separate backup of important files.
+A snapshot is a convenient recovery point for VM state, but it is not a substitute for a separate backup of important files.
+
+---
+<img width="1920" height="1080" alt="Screenshot (1814)" src="https://github.com/user-attachments/assets/b641d136-d4c8-422a-ad30-36b3becf1426" />
+
 
 ## 🔎 Lab Verification
 
-Run the following commands inside your own Kali VM. The examples assume the network values listed in the configuration table; replace them if your actual lab uses different values.
+Run these commands inside your own Kali VM. Record the actual output in your lab notes rather than copying assumed IP, gateway, or DNS values.
 
 | ✅ Test | 🧾 Command | 🎯 Expected Result |
 |---|---|---|
-| 🌐 Check IP address | `ip a` | The intended Kali address is shown on the correct interface |
-| 🧭 Check routing | `ip route` | A default route via the configured gateway is present |
-| 📡 Test gateway | `ping -c 4 10.0.0.1` | Replies, if ICMP is permitted and the gateway is correct |
-| 🌍 Test Internet connectivity | `ping -c 4 8.8.8.8` | Replies, if external ICMP is permitted |
-| 🔎 Test DNS resolution | `nslookup networkwalks.com` | The domain resolves using the configured resolver |
-| 🧰 Verify Nmap | `nmap --version` | Nmap version information is displayed |
-| 🔄 Verify snapshot | Restore snapshot, then run `ip a` | The baseline VM state is restored |
+| 🐉 Check Kali release | `cat /etc/os-release` | Installed OS/release information is displayed |
+| 🌐 Check IP address | `ip -br address` | An address is shown on the connected network interface |
+| 🚪 Check gateway/default route | `ip route` | Default route is displayed when provided by the network |
+| 🧰 Check network state | `nmcli device status` | Network interface state is shown |
+| 🌍 Check DNS configuration | `nmcli device show` | DNS and interface information is displayed where available |
+| 📡 Test outbound IP connectivity | `ping -c 4 1.1.1.1` | Replies if outbound access and ICMP are permitted |
+| 🔎 Test DNS resolution | `getent hosts kali.org` | Hostname resolves when DNS is working |
+| 🧪 Verify Nmap | `nmap --version` | Installed Nmap version is displayed |
+| 🔄 Verify snapshot | Restore baseline snapshot and rerun `ip -br address` | Saved VM state is restored |
 
-### Example Results
+To test the gateway, first read its address from `ip route` and then run `ping -c 4 <gateway-address>` using the actual gateway value. Only perform host discovery against a subnet that you own or have explicit permission to test.
 
-Record your actual output here after completing the checks:
+<img width="737" height="302" alt="Screenshot 2026-10-26 222817" src="https://github.com/user-attachments/assets/b598f5e9-5650-42f9-a7d4-3c47f76c1191" />
 
-```text
-Kali IP Address: 10.0.0.2/24
-Default Gateway:  10.0.0.1
-DNS Server:       8.8.8.8
-```
+<img width="885" height="160" alt="Screenshot 2026-10-26 222800" src="https://github.com/user-attachments/assets/88dd25ab-e9c2-4b84-b392-a1041ebf2d37" />
 
-These are example values, not a claim that the lab has been run on your machine. A failed ping alone does not necessarily mean the network is broken; ICMP may be blocked. Use `ip route`, DNS queries, and other relevant checks to troubleshoot.
+<img width="967" height="137" alt="Screenshot 2026-10-26 222753" src="https://github.com/user-attachments/assets/0d9ff256-9f0b-4a1a-ad2b-28d36037701f" />
 
-For a separate command checklist, see [`docs/verification-commands.md`](docs/verification-commands.md).
+<img width="647" height="250" alt="Screenshot 2026-10-28 222358" src="https://github.com/user-attachments/assets/ddf995ba-4816-47e4-8d22-15c74c535537" />
 
-## 🐞 Problems Encountered & Solutions
-
-Document the symptoms, diagnosis, and verified fix for each issue you encounter. The examples below are possible troubleshooting paths, not universal fixes.
-
-### Problem 1. Internet Connectivity After Static IP Configuration
-
-After manually configuring IPv4, Internet connectivity can fail because of an incorrect gateway, duplicate IP, DNS configuration, or NetworkManager connection settings.
-
-1. Identify the actual connection name:
-
-   ```bash
-   nmcli connection show
-   nmcli device status
-   ip route
-   ```
-
-2. Confirm that the IP address is unique, the gateway belongs to the configured subnet, and the address does not conflict with the DHCP pool.
-3. Check DNS separately from IP reachability, then reconnect the relevant NetworkManager connection if needed.
-
-A lab-specific workaround that may be encountered in notes is:
-
-```bash
-sudo nmcli connection modify "Wired connection 1" ipv4.dad-timeout 0
-```
-
-**Caution:** `Wired connection 1` is only an example connection name, and this setting is not a universal Internet-connectivity fix. Do not run it blindly. Confirm the connection name and consult `nmcli` documentation for your installed NetworkManager version before changing connection properties.
-
-### Problem 2. VirtualBox VT-x / Virtualization Error
-
-If the VM fails to start because hardware virtualization is disabled:
-
-1. Restart the computer.
-2. Enter the BIOS/UEFI settings.
-3. Enable Intel VT-x / hardware virtualization (the option name varies by system).
-4. Save the configuration and restart.
-5. Start the Kali VM again.
-
-On some systems, operating-system hypervisor settings or firmware limitations may also affect VirtualBox. Record the exact error message if enabling virtualization does not resolve the issue.
-
-## 💡 What I Learned
-
-Through this project, I learned how to build and document a virtual environment for cybersecurity practice.
-
-### 1. NAT vs NAT Network
-
-A standard VirtualBox NAT attachment and a NAT Network are different modes. A NAT Network can allow multiple VMs on the same virtual network to communicate with one another while providing outbound network address translation.
-
-### 2. Virtual Machine Networking
-
-VirtualBox adapters connect VMs to different network types. Adapter mode, subnet, gateway, DHCP, and firewall settings all affect connectivity.
-
-### 3. Static IP Configuration
-
-I learned how to inspect and configure IPv4 addresses, subnet masks, default gateways, and DNS settings in Kali Linux, and why address conflicts should be avoided.
-
-### 4. VM Snapshots
-
-A clean snapshot provides a known-good recovery point before experiments. Important files should still be backed up separately.
-
-### 5. Documentation
-
-Documenting commands, configuration, screenshots, problems, and verified solutions makes a lab repeatable and easier to troubleshoot.
-
-## 🔐 Security & Ethical Use
-
-This environment is for educational use and authorized testing only.
-
-- Scan only your own lab machines or systems for which you have explicit authorization.
-- Keep intentionally vulnerable targets on the dedicated private lab network.
-- Do not expose vulnerable services to the public Internet or bridge vulnerable VMs onto a trusted LAN.
-- Avoid committing passwords, tokens, private keys, VM disk images, or personal information to GitHub.
-- Take a snapshot before significant configuration changes or risky experiments.
-
-## 🔗 Tools & Resources
-
-- [7-Zip Downloads](https://www.7-zip.org/download.html)
-- [VirtualBox Downloads](https://www.virtualbox.org/wiki/Downloads)
-- [Kali Linux Downloads](https://www.kali.org/get-kali/)
-- [Kali Linux Documentation](https://www.kali.org/docs/)
-
-## 👤 Author
-
-Replace the example fields below with your own details before publishing:
-
-- **Name:** Ayush Shukla
-- **Course / Cohort:** Cybersecurity Professional B084 *(edit as applicable)*
-- **LinkedIn:** https://lnkd.in/p/gUu3aJAS
-- **GitHub:** https://github.com/Hacker-Ayush-py03/Network_Walks
-
-## 📌 Project Information
-
-- **Program Name:** Cybersecurity at Networkwalks *(edit as applicable)*
-- **Week:** 01
-- **Project:** Cybersecurity & Pentesting Lab Setup
-- **Repository:** https://github.com/Hacker-Ayush-py03/Network_Walks/blob/main/README.md
+For a compact checklist, see [`docs/verification-commands.md`](docs/verification-commands.md).
 
 ---
 
-*This README is a project template. Update the configuration, screenshots, author information, and verification results to reflect your own lab before presenting it as completed work.*
+## 🐞 Problems Encountered & Solutions
+
+Document the exact error message and solution that you personally verified. The following are troubleshooting steps to use if the corresponding problem occurs; they are not claims that every issue happened on this machine.
+
+### Problem 1. Kali Has No Network Connectivity
+
+1. Confirm the VMware Network Adapter is set to **NAT** and is connected.
+2. In Kali, run `ip -br address` and `ip route` to inspect the interface and route.
+3. Run `nmcli device status` to confirm whether NetworkManager sees the interface as connected.
+4. If the guest has no IPv4 address, inspect the active NetworkManager connection and DHCP status before setting an address manually.
+5. If IP connectivity works but hostnames fail, inspect DNS using `nmcli device show` and `cat /etc/resolv.conf`.
+6. Check VMware's NAT/network service configuration if the guest is not receiving an address or route.
+
+Do not paste a guessed gateway or DNS server into the configuration. First confirm the values for this VM's actual NAT network.
+
+### Problem 2. Hardware Virtualization Error
+
+If VMware reports that hardware virtualization is unavailable on this AMD Ryzen host:
+
+1. Restart Windows and open the system BIOS/UEFI settings.
+2. Locate the AMD virtualization setting, commonly labelled **SVM Mode** or **AMD-V**, if available.
+3. Enable it, save the firmware changes, and restart the computer.
+4. Retry the VM and follow the exact guidance in the displayed VMware error if it still fails.
+
+Firmware menu names vary by motherboard manufacturer. Do not change unrelated security or virtualization settings without understanding the impact.
+
+### Problem 3. Kali VM Runs Slowly
+
+The screenshot shows **8 GB of RAM** and **3 processors** assigned to Kali. VM performance also depends on the host's physical RAM, exact Ryzen 5 model, and other running applications. If Windows becomes unresponsive, shut down the VM and reduce the assigned resources to a level the host can comfortably support.
+
+---
+
+## 💡 What I Learned
+
+Through this project, I practiced or documented the following concepts:
+
+1. **Virtualization:** VMware Workstation runs a guest operating system using virtual hardware.
+2. **VM resource allocation:** Memory, processor settings, virtual disks, removable media, and devices can be configured for the guest separately from the host.
+3. **NAT networking:** A NAT-connected VM can usually initiate outbound connections through the host, but NAT should not be described as complete isolation.
+4. **Network troubleshooting:** `ip`, `nmcli`, and DNS lookup commands help identify address, route, interface, and name-resolution problems.
+5. **Snapshots:** A clean snapshot provides a convenient rollback point before experiments.
+6. **Documentation:** Tables, screenshots, command output, and verified troubleshooting notes make a technical lab easier to reproduce.
+
+---
+
+## 🔐 Security & Ethical Use
+
+This lab is for education and authorized testing only. Test systems you own or have explicit permission to assess. Keep deliberately vulnerable targets off production and public networks. For stronger separation, evaluate a host-only or carefully configured custom virtual network instead of relying on NAT alone.
+
+---
+
+## 🔗 Tools & Resources
+
+- **Kali Linux downloads:** [https://www.kali.org/get-kali/](https://www.kali.org/get-kali/)
+- **Kali Linux documentation:** [https://www.kali.org/docs/](https://www.kali.org/docs/)
+- **VMware Workstation / Fusion:** [https://www.vmware.com/products/desktop-hypervisor/workstation-and-fusion](https://www.vmware.com/products/desktop-hypervisor/workstation-and-fusion)
+- **Broadcom Support Portal:** [https://support.broadcom.com/](https://support.broadcom.com/)
+- **Nmap Reference Guide:** [https://nmap.org/book/man.html](https://nmap.org/book/man.html)
+- **Report Drive Link:** [https://nmap.org/book/man.html]()
+---
+
+## 👤 Author
+
+**Name:** Ayush Shukla  
+**Course / Cohort:** Cybersecurity Professional B084
+**GitHub:**  https://github.com/Hacker-Ayush-py03/Network_Walks 
+**LinkedIn:** https://lnkd.in/p/gUu3aJAS
+
+
+
+---
+
+## 📌 Project Information
+
+| Field | Details |
+|---|---|
+| Program Name | Cybersecurity Lab Setup |
+| Compnay Name | Network Walks|
+| Week | 01  |
+| Project | Cybersecurity & Penetration Testing Lab Setup |
+| Host OS | Windows 11 |
+| Host Processor | AMD Ryzen 5 |
+| Hypervisor | VMware Workstation 25H2 |
+| Guest OS | Kali Linux |
+| Virtual Network | NAT |
+| Repository | GitHub |
+
+---
+
+<div align="center">
+  <sub>Created for cybersecurity learning and authorized lab practice.</sub>
+</div>
