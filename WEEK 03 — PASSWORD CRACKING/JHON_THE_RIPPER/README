@@ -205,24 +205,6 @@ All three passwords were recovered using John the Ripper, and all three PDFs wer
 
 ---
 
-## 📸 Screenshot Evidence
-
-Screenshot evidence for this project will be added to the [`screenshots/`](screenshots) directory. See [`screenshots/README.md`](screenshots/README.md) for the full list of expected evidence files and their suggested filenames. The repository is structured to remain complete and readable even before screenshots are added — each placeholder below indicates where evidence will be inserted.
-
-
-`[SCREENSHOT PLACEHOLDER – FILE 1 HASH EXTRACTION]`
-`[SCREENSHOT PLACEHOLDER – FILE 2 HASH EXTRACTION]`
-`[SCREENSHOT PLACEHOLDER – FILE 3 HASH EXTRACTION]`
-`[SCREENSHOT PLACEHOLDER – HASH FILE PREPARATION]`
-`[SCREENSHOT PLACEHOLDER – JOHN THE RIPPER EXECUTION]`
-`[SCREENSHOT PLACEHOLDER – FILE 1 PASSWORD RECOVERY]`
-`[SCREENSHOT PLACEHOLDER – FILE 2 PASSWORD RECOVERY]`
-`[SCREENSHOT PLACEHOLDER – FILE 3 PASSWORD RECOVERY]`
-`[SCREENSHOT PLACEHOLDER – PDF PASSWORD VALIDATION]`
-`[SCREENSHOT PLACEHOLDER – FINAL FLAG VERIFICATION]`
-
----
-
 ## 🎓 Key Technical Learnings
 
 - How PDF password protection relies on a key-derivation process that can be represented as an offline-crackable hash.
