@@ -31,8 +31,7 @@
 9. [Hash Analysis](#-hash-analysis)
 10. [Recovered Passwords & Captured Flags](#-recovered-passwords--captured-flags)
 11. [Results Summary](#-results-summary)
-12. [Screenshot Evidence](## 🏁 Recovered Passwords & Captured Flags
-)
+12. [Recovered Passwords & Flags](#-recovered-passwords--flags)
 13. [Key Technical Learnings](#-key-technical-learnings)
 14. [Security Recommendations](#-security-recommendations)
 15. [Conclusion](#-conclusion)
@@ -116,6 +115,116 @@ Before John the Ripper can attempt to recover a password, the relevant password-
 
 ---
 
+---
+
+## 📝 Saving Extracted Hashes Using Nano Text Editor
+
+After extracting the PDF-compatible password hashes from the three challenge files using the **OnlineHashCrack PDF Hash Extractor**, I saved each extracted hash separately using the Nano text editor in Kali Linux.
+
+Instead of storing all three hashes in a single file, I created three individual hash files to keep the assessment organized and allow John the Ripper to process each PDF independently.
+
+### Hash File Creation
+
+**PDF 1 — First Hash File**
+
+```bash
+nano pdf.hash
+```
+
+The extracted hash of PDF File 1 was pasted into the Nano editor and saved as `pdf.hash`.
+
+**PDF 2 — Second Hash File**
+
+```bash
+nano pdf.hash2
+```
+
+The extracted hash of PDF File 2 was pasted into the Nano editor and saved as `pdf.hash2`.
+
+**PDF 3 — Third Hash File**
+
+```bash
+nano pdf.hash3
+```
+
+The extracted hash of PDF File 3 was pasted into the Nano editor and saved as `pdf.hash3`.
+
+### Saving the Files in Nano
+
+For each hash file, I followed these steps:
+
+1. Opened the file using the `nano` command.
+2. Pasted the corresponding extracted `$pdf$` hash.
+3. Pressed `CTRL + O` to write and save the file.
+4. Pressed `ENTER` to confirm the filename.
+5. Pressed `CTRL + X` to exit the Nano editor.
+
+### Final Hash File Structure
+
+After saving all three hashes, the following files were available in the Kali Linux working directory:
+
+```text
+pdf.hash
+pdf.hash2
+pdf.hash3
+```
+
+Each file contained the extracted PDF hash corresponding to its respective challenge document.
+
+---
+
+## ⚡ Using John the Ripper on the Saved Hash Files
+
+Once all three hash files were prepared, I used **John the Ripper (Jumbo)** with the RockYou wordlist to perform dictionary-based password auditing.
+
+Each hash file was processed separately using the following commands.
+
+### PDF File 1
+
+```bash
+john --format=pdf --wordlist=/usr/share/wordlists/rockyou.txt pdf.hash
+```
+<img width="987" height="247" alt="Screenshot 2026-11-20 210122" src="https://github.com/user-attachments/assets/198de0a6-ab1b-4b84-9d7d-5e40826c3467" />
+
+### PDF File 2
+
+```bash
+john --format=pdf --wordlist=/usr/share/wordlists/rockyou.txt pdf.hash2
+```
+<img width="867" height="243" alt="Screenshot 2026-11-20 211627" src="https://github.com/user-attachments/assets/3d316bd1-889a-478a-a881-ef7ed35966c7" />
+
+### PDF File 3
+
+```bash
+john --format=pdf --wordlist=/usr/share/wordlists/rockyou.txt pdf.hash3
+```
+<img width="903" height="250" alt="Screenshot 2026-11-20 211800" src="https://github.com/user-attachments/assets/27048e3d-4c25-4962-95be-c4fdb6cdfa8b" />
+
+### Verifying the Recovered Passwords
+
+After running the dictionary attacks, I used John's `--show` option to display the recovered passwords.
+
+```bash
+john --show --format=pdf pdf.hash
+```
+<img width="384" height="119" alt="Screenshot 2026-11-20 231110" src="https://github.com/user-attachments/assets/295c3e24-96a2-4b10-97fd-72a2cf97d04c" />
+
+```
+john --show --format=pdf pdf.hash2
+```
+<img width="454" height="122" alt="Screenshot 2026-11-20 231135" src="https://github.com/user-attachments/assets/19aac83e-bd2c-440e-b0ad-25d2f06f8f94" />
+
+```
+john --show --format=pdf pdf.hash3
+```
+<img width="465" height="136" alt="image" src="https://github.com/user-attachments/assets/7d4d7472-b5b9-4921-9425-4e3724d8e146" />
+
+
+John the Ripper confirmed successful password recovery for all three PDF hash files.
+
+**Result:** All three supplied PDF password hashes were successfully recovered.
+
+---
 ## 🔐 Password Auditing Methodology
 
 Once the hashes were extracted, offline password auditing was performed:
@@ -149,8 +258,7 @@ flowchart TD
 |---|---|
 | 1 | Obtain the three password-protected PDF challenge files. |
 | 2 | Extract the `$pdf$` hash of each file using the OnlineHashCrack PDF Hash Extractor. |
-| 3 | Save each hash into its own hash text file.'<img width="1895" height="254" alt="Screenshot 2026-11-20 211747" src="https://github.com/user-attachments/assets/3b8590b4-3274-4000-87c8-1cc2ee293749" />'
- |
+| 3 | Save each hash into its own hash text file.|
 | 4 | Load each hash file into John the Ripper. |
 | 5 | Run a password-recovery attack against each hash. |
 | 6 | Confirm the recovered password with `john --show`. |
