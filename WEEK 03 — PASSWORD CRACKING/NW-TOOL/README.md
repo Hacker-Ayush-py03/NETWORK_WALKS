@@ -31,7 +31,7 @@
 | **Author** | Ayush Shukla |
 | **GitHub** | [Hacker-Ayush-py03](https://github.com/Hacker-Ayush-py03) |
 | **Parent Repository** | [NETWORK_WALKS](https://github.com/Hacker-Ayush-py03/NETWORK_WALKS) |
-| **Related (Separate) Module** | Week 3 – PM1 (John the Ripper) — *not covered here* |
+| **Related (Separate) Module** | Week 3 – PM1 (John the Ripper)  |
 
 > **Note:** This repository documents a **separate and independent** practical from Week 3 – Project Module 1. PM1 used John the Ripper; this module (PM2) exclusively documents **NetworkWalks' own online Hash Calculator and Password Cracker tools**. The two tools and workflows are not interchangeable and are kept clearly distinct throughout this documentation.
 
