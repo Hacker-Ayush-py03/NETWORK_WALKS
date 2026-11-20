@@ -31,11 +31,11 @@
 9. [Hash Analysis](#-hash-analysis)
 10. [Recovered Passwords & Captured Flags](#-recovered-passwords--captured-flags)
 11. [Results Summary](#-results-summary)
-12. [Screenshot Evidence](#-screenshot-evidence)
+12. [Screenshot Evidence](## 🏁 Recovered Passwords & Captured Flags
+)
 13. [Key Technical Learnings](#-key-technical-learnings)
 14. [Security Recommendations](#-security-recommendations)
-15. [Repository Structure](#-repository-structure)
-16. [Conclusion](#-conclusion)
+15. [Conclusion](#-conclusion)
 17. [Author Information](#-author-information)
 18. [References](#-references)
 
@@ -46,7 +46,7 @@
 | Field | Detail |
 |---|---|
 | Program | NetworkWalks — Cybersecurity & Ethical Hacking Internship |
-| Batch | B084B |
+| Batch | B084 |
 | Week | Week 3 |
 | Project Module | PM1 — Password Cracking with John the Ripper |
 | Student | Ayush Shukla |
@@ -102,8 +102,6 @@ The **Jumbo** community-maintained build of John the Ripper extends the original
 | **PDF reader** | Used to validate each recovered password by opening the original encrypted PDF. |
 | Linux / Windows lab environment | General-purpose OS environment in which the auditing was carried out. |
 
-> The exact operating system and John the Ripper build version used for the original cracking session are not restated here beyond what is confirmed above; command examples in this repository should be checked against your own installed build (see [Command Documentation](commands/JOHN_THE_RIPPER_COMMANDS.md)).
-
 ---
 
 ## 🔍 PDF Hash Extraction Methodology
@@ -151,7 +149,8 @@ flowchart TD
 |---|---|
 | 1 | Obtain the three password-protected PDF challenge files. |
 | 2 | Extract the `$pdf$` hash of each file using the OnlineHashCrack PDF Hash Extractor. |
-| 3 | Save each hash into its own hash text file. |
+| 3 | Save each hash into its own hash text file.'<img width="1895" height="254" alt="Screenshot 2026-11-20 211747" src="https://github.com/user-attachments/assets/3b8590b4-3274-4000-87c8-1cc2ee293749" />'
+ |
 | 4 | Load each hash file into John the Ripper. |
 | 5 | Run a password-recovery attack against each hash. |
 | 6 | Confirm the recovered password with `john --show`. |
@@ -205,6 +204,37 @@ All three passwords were recovered using John the Ripper, and all three PDFs wer
 
 ---
 
+## 🖼 Screenshot Evidence
+
+| # | Evidence | Placeholder |
+|---|---|---|
+| 1 | Original PDF challenge files | `<img width="1518" height="764" alt="Screenshot 2026-11-20 224157" src="https://github.com/user-attachments/assets/776afe53-e370-4029-951b-c132d75814ab" />
+` |
+| 2 | Hash Calculator homepage | `<img width="1139" height="842" alt="image" src="https://github.com/user-attachments/assets/55ce323d-837a-4a54-a8d1-14b46fd2eea2" />
+` |
+| 4 | File 1 – extracted PDF hash | `<img width="1021" height="698" alt="Screenshot 2026-11-20 205622" src="https://github.com/user-attachments/assets/5275d173-efe6-4703-9ec5-cd410747bb82" />
+` |
+| 5 | File 2 – extracted PDF hash | `<img width="1019" height="749" alt="Screenshot 2026-11-20 215345" src="https://github.com/user-attachments/assets/bebb8c27-8deb-4942-a32e-1d8c7bb24758" />
+` |
+| 6 | File 3 – extracted PDF hash | `<img width="1028" height="735" alt="Screenshot 2026-11-20 215354" src="https://github.com/user-attachments/assets/6e92c319-65cb-45e1-b537-1b53e32908dd" />
+` |
+| 7 | JOHN THE RIPPER | `<img width="1422" height="833" alt="Screenshot 2026-11-20 221339" src="https://github.com/user-attachments/assets/7314c0ad-4aba-496b-86b0-606da539fc82" />
+` |
+| 9 | Dictionary / wordlist selection | `<img width="429" height="25" alt="image" src="https://github.com/user-attachments/assets/23f57e50-59ac-4828-9cda-1fff0cb95a70" />
+` |
+| 11 | File 1 – recovered password | `<img width="987" height="247" alt="Screenshot 2026-11-20 210122" src="https://github.com/user-attachments/assets/51a83b78-8b0a-4911-ba93-73bb3386c232" />
+` |
+| 12 | File 2 – recovered password | `<img width="867" height="243" alt="Screenshot 2026-11-20 211627" src="https://github.com/user-attachments/assets/d5b880fb-f08b-4dc1-be3f-3a12029ce3d8" />
+` |
+| 13 | File 3 – recovered password | `<img width="903" height="250" alt="Screenshot 2026-11-20 211800" src="https://github.com/user-attachments/assets/a9e08a76-4027-4b41-82ff-5721fd50bd0a" />
+` |
+| 15 | Final flag verification | `<img width="769" height="493" alt="Screenshot 2026-11-20 224657" src="https://github.com/user-attachments/assets/52c7654f-3a40-4ebd-aa2d-bf2bdaaef931" />
+
+<img width="1037" height="400" alt="Screenshot 2026-11-20 211308" src="https://github.com/user-attachments/assets/2d8a2093-e423-4be1-bb6c-1aafcbe7cf47" />
+<img width="1018" height="823" alt="Screenshot 2026-11-20 211920" src="https://github.com/user-attachments/assets/edd053d6-c5d0-40f4-8e15-8dd61410a6dc" />
+
+` |
+
 ## 🎓 Key Technical Learnings
 
 - How PDF password protection relies on a key-derivation process that can be represented as an offline-crackable hash.
@@ -214,8 +244,6 @@ All three passwords were recovered using John the Ripper, and all three PDFs wer
 - The importance of verifying a tool's supported format names/labels against the specific build installed, rather than assuming they match documentation or other versions.
 - How to validate a recovered password independently (by actually opening the file) rather than trusting the cracking tool's output alone.
 - The difference between **encryption** (reversible, key-based) and **hashing** (one-way, verification-based) and why PDF password audits work with the latter concept even though PDF protection itself is implemented via encryption.
-
-For an in-depth technical discussion, see [`docs/TECHNICAL_DOCUMENTATION.md`](docs/TECHNICAL_DOCUMENTATION.md) and [`docs/LEARNING_OUTCOMES.md`](docs/LEARNING_OUTCOMES.md).
 
 ---
 
@@ -230,8 +258,6 @@ Based on this exercise, the following recommendations apply to real-world PDF an
 - **Be cautious with third-party hash-extraction or cracking services** — never upload files containing real sensitive or confidential data to a public online tool.
 
 ---
-
-
 
 ## ✅ Conclusion
 
@@ -262,4 +288,3 @@ Aspiring Penetration Tester / VAPT Analyst
 *This project was completed as authorized coursework for the NetworkWalks Cybersecurity & Ethical Hacking Internship, using training challenge files supplied for educational password-security auditing purposes.*
 
 </div>
-
