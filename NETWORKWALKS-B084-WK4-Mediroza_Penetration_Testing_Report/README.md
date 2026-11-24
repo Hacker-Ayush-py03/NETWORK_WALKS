@@ -1,4 +1,42 @@
 
+<div align="center">
+
+# 🔴 WEEK 04 — Mediroza General Hospital — Web Application Penetration Testing
+
+<p align="center">
+  <strong>Cybersecurity | Ethical Hacking | Black-Box Testing | Vulnerability Assessment</strong>
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Program-NetworkWalks-black?style=for-the-badge&labelColor=C00000" alt="Program"/>
+  <img src="https://img.shields.io/badge/Batch-8084B-information?style=for-the-badge&labelColor=000000" alt="Batch"/>
+  <img src="https://img.shields.io/badge/Week-04-red?style=for-the-badge" alt="Week"/>
+  <img src="https://img.shields.io/badge/Assessment-Black--Box%20Testing-darkred?style=for-the-badge" alt="Assessment"/>
+  <img src="https://img.shields.io/badge/Focus-Web%20Application%20Security-black?style=for-the-badge" alt="Focus"/>
+  <img src="https://img.shields.io/badge/Status-Completed-success?style=for-the-badge" alt="Status"/>
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/OWASP-Top%2010-C00000?style=flat-square" alt="OWASP"/>
+  <img src="https://img.shields.io/badge/SQL%20Injection-Assessment-darkred?style=flat-square" alt="SQL Injection"/>
+  <img src="https://img.shields.io/badge/Document%20Security-Assessment-black?style=flat-square" alt="Document Security"/>
+  <img src="https://img.shields.io/badge/Data%20Exposure-Analysis-C00000?style=flat-square" alt="Data Exposure"/>
+</p>
+
+</div>
+
+---
+
+**Author:** Ayush Shukla | **GitHub:** [@Hacker-Ayush-py03](https://github.com/Hacker-Ayush-py03)
+
+**Parent Repository:** [NETWORK_WALKS](https://github.com/Hacker-Ayush-py03/NETWORK_WALKS)
+
+**Project:** Mediroza General Hospital — Penetration Testing Report
+
+---
+
+## 📌 Project Overview
+
 # Mediroza General Hospital — Web Application Penetration Testing
 
 **Prepared by:** Ayush Shukla  
